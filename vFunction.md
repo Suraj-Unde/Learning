@@ -630,3 +630,720 @@ Whereas vFunction focuses on:
 You can explain it in simple terms like this:
 
 > “vFunction acts like an MRI scan for enterprise applications. It deeply understands how the application is structured internally, identifies architectural problems, recommends how to break monoliths into microservices, and continuously monitors architectural health during modernization and cloud transformation.”
+
+
+---
+
+# How vFunction Performs Deep Application Analysis
+
+(Technical Deep Dive)
+
+To understand vFunction properly, the most important thing is understanding:
+
+> “How does the platform actually analyze an enterprise application internally?”
+
+vFunction combines multiple analysis techniques together because:
+
+* Static analysis alone is insufficient
+* Runtime analysis alone is incomplete
+* Tracing alone lacks architectural understanding
+
+So it combines all these layers to create:
+
+> A continuously updated architectural intelligence model.
+
+---
+
+# High-Level Analysis Pipeline
+
+The complete analysis pipeline looks like this:
+
+```text
+Source Code
+     ↓
+Static Analysis Engine
+     ↓
+Dependency Graph Creation
+     ↓
+Runtime Telemetry Collection
+     ↓
+Distributed Tracing Correlation
+     ↓
+AI Dependency Intelligence
+     ↓
+Architectural Model Generation
+     ↓
+Continuous Observability
+```
+
+---
+
+# 1. Source Code Analysis (Static Analysis)
+
+This is the first layer of understanding the application.
+
+---
+
+# What is Static Code Analysis?
+
+Static analysis means:
+
+> Analyzing the application WITHOUT executing it.
+
+The platform scans:
+
+* Source files
+* Classes
+* Methods
+* Packages
+* APIs
+* Imports
+* Database queries
+* Framework annotations
+* Configuration files
+
+---
+
+# What vFunction Looks For
+
+The platform builds relationships between:
+
+| Entity                | Example                 |
+| --------------------- | ----------------------- |
+| Classes               | OrderService.java       |
+| Methods               | createOrder()           |
+| APIs                  | /api/orders             |
+| DB calls              | SELECT FROM orders      |
+| Kafka/RabbitMQ topics | order-created           |
+| Framework usage       | Spring Boot annotations |
+| Service calls         | REST/gRPC               |
+| Shared libraries      | common-utils            |
+
+---
+
+# How It Internally Works
+
+---
+
+## Step 1 — Parsing Source Code
+
+The platform uses language parsers/AST engines.
+
+AST = Abstract Syntax Tree
+
+Example:
+
+```java
+public class OrderService {
+   public void createOrder() {
+      paymentService.pay();
+   }
+}
+```
+
+AST representation:
+
+```text
+Class → OrderService
+  Method → createOrder()
+      Dependency → paymentService.pay()
+```
+
+This converts code into machine-understandable structures.
+
+---
+
+# Step 2 — Dependency Extraction
+
+The engine identifies:
+
+* Function calls
+* Class references
+* API invocations
+* DB access
+* Framework coupling
+
+Example:
+
+```text
+OrderService
+   ↓
+PaymentService
+   ↓
+InventoryService
+```
+
+This becomes:
+
+> Dependency Graph
+
+---
+
+# Step 3 — Package & Domain Analysis
+
+The platform groups code into:
+
+* Domains
+* Modules
+* Functional areas
+
+Example:
+
+```text
+com.bank.payment.*
+com.bank.user.*
+com.bank.loan.*
+```
+
+AI tries identifying:
+
+* Natural business boundaries
+* Bounded contexts
+
+---
+
+# Step 4 — Database Relationship Discovery
+
+The engine scans:
+
+* ORM mappings
+* SQL queries
+* Repository classes
+* Stored procedures
+
+to determine:
+
+* Which services share databases
+* Which modules own which data
+
+This is CRITICAL in microservices decomposition.
+
+---
+
+# Step 5 — Coupling Analysis
+
+The platform measures:
+
+| Coupling Type     | Meaning                    |
+| ----------------- | -------------------------- |
+| Code coupling     | Method dependencies        |
+| Data coupling     | Shared DB tables           |
+| Runtime coupling  | Service interaction        |
+| Temporal coupling | Services changing together |
+
+---
+
+# Why Static Analysis Alone is Not Enough
+
+Static analysis cannot detect:
+
+* Runtime-generated calls
+* Reflection
+* Dynamic APIs
+* Actual production traffic
+* Real usage patterns
+
+That is why runtime analysis becomes necessary.
+
+---
+
+# 2. Runtime Analysis
+
+This analyzes:
+
+> What ACTUALLY happens when the application runs.
+
+---
+
+# Why Runtime Analysis Matters
+
+Example:
+
+Static code may show:
+
+```text
+PaymentService can call NotificationService
+```
+
+But runtime may reveal:
+
+```text
+It almost never does in production.
+```
+
+OR
+
+Static code misses:
+
+```text
+Dynamic runtime calls through reflection
+```
+
+---
+
+# How Runtime Analysis Works
+
+vFunction attaches:
+
+* Agents
+* Telemetry collectors
+* Instrumentation libraries
+
+to running applications.
+
+These capture:
+
+* Request flows
+* API calls
+* DB queries
+* Thread execution
+* Message queues
+* Service interactions
+
+---
+
+# Runtime Data Captured
+
+## API Traffic
+
+```text
+Client → API Gateway → Order Service → Payment Service
+```
+
+---
+
+## Database Access
+
+```text
+OrderService → orders_db
+PaymentService → payment_db
+```
+
+---
+
+## Messaging Systems
+
+Tracks:
+
+* Kafka
+* RabbitMQ
+* JMS
+* Event streams
+
+---
+
+## Performance Metrics
+
+Captures:
+
+* Latency
+* Throughput
+* Failures
+* Retry behavior
+
+---
+
+# Runtime Dependency Discovery
+
+This helps identify:
+
+* Hidden service dependencies
+* Runtime bottlenecks
+* Critical business flows
+
+Example:
+
+```text
+Checkout Flow:
+UI → Order → Payment → Inventory → Shipping
+```
+
+This becomes:
+
+> Transaction topology
+
+---
+
+# 3. Distributed Tracing
+
+This is one of the MOST important capabilities.
+
+---
+
+# What is Distributed Tracing?
+
+In microservices:
+one request travels through many services.
+
+Example:
+
+```text
+User Request
+   ↓
+Gateway
+   ↓
+Order Service
+   ↓
+Payment Service
+   ↓
+Inventory Service
+   ↓
+Notification Service
+```
+
+Distributed tracing tracks:
+
+> The complete lifecycle of the request.
+
+---
+
+# Trace Structure
+
+A trace consists of:
+
+* Trace ID
+* Parent spans
+* Child spans
+* Timing information
+
+Example:
+
+```text
+Trace ID: abc123
+
+Span 1 → API Gateway
+Span 2 → Order Service
+Span 3 → Payment Service
+Span 4 → DB Query
+```
+
+---
+
+# What vFunction Learns From Traces
+
+---
+
+## A. Service Communication Patterns
+
+Which services talk frequently.
+
+---
+
+## B. Critical Paths
+
+Which services are essential for transactions.
+
+---
+
+## C. Bottlenecks
+
+Example:
+
+```text
+Payment Service latency = 2.5 seconds
+```
+
+---
+
+## D. Coupling Analysis
+
+Example:
+If two services always appear together:
+
+* They may be tightly coupled.
+
+---
+
+## E. Failure Propagation
+
+Example:
+
+```text
+Payment failure → Checkout failure
+```
+
+---
+
+# How Tracing Helps Modernization
+
+Tracing helps identify:
+
+* Proper microservice boundaries
+* High-risk dependencies
+* Scalability bottlenecks
+
+---
+
+# 4. OpenTelemetry Telemetry Collection
+
+This is the telemetry foundation.
+
+---
+
+# What is OpenTelemetry?
+
+OpenTelemetry is an open standard for:
+
+* Metrics
+* Logs
+* Traces
+* Telemetry instrumentation
+
+It provides:
+
+> Vendor-neutral observability data collection.
+
+---
+
+# Why vFunction Uses OpenTelemetry
+
+Instead of building proprietary agents,
+vFunction leverages:
+
+* OpenTelemetry SDKs
+* Collectors
+* Instrumentation agents
+
+This allows:
+
+* Standardized telemetry
+* Multi-platform support
+* Cloud-native integration
+
+---
+
+# Telemetry Flow
+
+```text
+Application
+   ↓
+OpenTelemetry SDK
+   ↓
+OTel Collector
+   ↓
+vFunction Analysis Engine
+```
+
+---
+
+# Data Collected via OpenTelemetry
+
+---
+
+## Metrics
+
+Example:
+
+* CPU
+* Request count
+* Latency
+* Error rate
+
+---
+
+## Traces
+
+Full distributed transaction traces.
+
+---
+
+## Logs
+
+Correlated logs linked to traces.
+
+---
+
+# Example Trace Correlation
+
+```text
+Trace ID: xyz789
+
+Gateway → Order Service → Payment Service
+```
+
+Logs and metrics get attached to same trace.
+
+This provides:
+
+> Unified observability.
+
+---
+
+# 5. AI-Assisted Dependency Mapping
+
+This is where vFunction becomes DIFFERENT from traditional tools.
+
+---
+
+# Traditional Dependency Mapping
+
+Older tools only show:
+
+```text
+A calls B
+B calls C
+```
+
+But they cannot understand:
+
+* Business domains
+* Service ownership
+* Architecture quality
+* Refactoring paths
+
+---
+
+# AI-Assisted Dependency Mapping
+
+vFunction uses AI/ML models to understand:
+
+* Semantic relationships
+* Domain patterns
+* Service boundaries
+* Change patterns
+* Runtime behavior
+
+---
+
+# What AI Actually Analyzes
+
+---
+
+## A. Naming Semantics
+
+Example:
+
+```text
+OrderService
+OrderRepository
+OrderController
+```
+
+AI infers:
+
+> These belong to Order domain.
+
+---
+
+## B. Change Correlation
+
+If two modules always change together:
+
+* They may belong together.
+
+---
+
+## C. Runtime Correlation
+
+If services communicate heavily:
+
+* They may form a bounded context.
+
+---
+
+## D. Transaction Flow Analysis
+
+AI identifies:
+
+* Business capabilities
+* Domain ownership
+
+---
+
+# AI-Based Microservice Recommendations
+
+The AI suggests:
+
+* Which modules should become services
+* Which dependencies must be removed
+* Which DB ownership boundaries are needed
+
+---
+
+# 6. Final Architecture Intelligence Model
+
+After combining:
+
+* Static analysis
+* Runtime analysis
+* Tracing
+* Telemetry
+* AI inference
+
+vFunction creates:
+
+> A continuously evolving architectural graph.
+
+---
+
+# What This Graph Contains
+
+---
+
+## Service Relationships
+
+```text
+Order → Payment → Inventory
+```
+
+---
+
+## Risk Scores
+
+Example:
+
+```text
+Payment Module Risk = High
+```
+
+---
+
+## Technical Debt Hotspots
+
+```text
+Shared DB access detected
+```
+
+---
+
+## Modernization Readiness
+
+```text
+Inventory domain ready for extraction
+```
+
+---
+
+# Why This Platform Is Powerful
+
+Most tools only answer:
+
+> “What is happening?”
+
+vFunction answers:
+
+* Why is it happening?
+* What architectural problem exists?
+* What should be modernized?
+* What should become a microservice?
+* What creates scaling risk?
+* What causes deployment bottlenecks?
+
+---
+
+# Simplified Analogy
+
+You can explain it to your team like this:
+
+| Technology            | Real-World Analogy              |
+| --------------------- | ------------------------------- |
+| Static Analysis       | Reading building blueprints     |
+| Runtime Analysis      | Watching people inside building |
+| Distributed Tracing   | Tracking movement room-to-room  |
+| OpenTelemetry         | CCTV + sensors                  |
+| AI Dependency Mapping | Architect redesigning building  |
+
+Combined together:
+
+> vFunction creates a live digital understanding of enterprise architecture.
+
