@@ -94,7 +94,6 @@ async def main():
     end = time.perf_counter()
     print(f"Time taken: {end - start:.02f} seconds")
 
-
 # To run the main function, we use asyncio.run, which sets up the event loop and executes the asynchronous code.
 # This will run the main function, which in turn runs the greet_after_delay function for each name concurrently, 
 # demonstrating how asynchronous programming allows for efficient execution of tasks that would otherwise block the program.
