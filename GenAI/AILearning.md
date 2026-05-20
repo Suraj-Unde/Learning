@@ -47,3 +47,6 @@ https://lnkd.in/dDtXCcRd
 End-to-end LLM apps.
 Roadmaps and demos.
 https://lnkd.in/djQMvD-R
+
+11 -> Interview Questions and Answer
+https://github.com/Nareshedagotti/AI-Engineer-Interview-QA
