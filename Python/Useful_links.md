@@ -1,8 +1,6 @@
 # Threading 
 https://www.datacamp.com/tutorial/threading-in-python
-
 https://dev.to/imsushant12/what-is-the-gil-in-python-and-why-should-you-care-1cai
-
 https://dev.to/imsushant12/global-interpreter-lock-gil-in-python-everything-you-need-to-know-for-interviews-5e4g
 # GIL
 https://www.datacamp.com/tutorial/python-global-interpreter-lock
