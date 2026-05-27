@@ -18,3 +18,10 @@ https://www.geeksforgeeks.org/operating-systems/understanding-fork-and-spawn-in-
 https://medium.com/@dorostkaaar/multiprocessing-in-python-with-parallelism-e5cc0760542f
 https://www.datacamp.com/tutorial/python-multiprocessing-tutorial
 https://hiteshmishra708.medium.com/multiprocessing-in-python-c6735fa70f3f
+
+---
+
+# Python TDD
+https://www.datacamp.com/tutorial/test-driven-development-in-python
+https://dev.to/nziokidennis/getting-started-with-test-driven-development-tdd-1447
+https://medium.com/@ldeassis/test-driven-development-in-python-a-practical-guide-for-intermediate-developers-fed4a41bf04e
