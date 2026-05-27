@@ -20,6 +20,8 @@ https://m-t-a.medium.com/python-30-questions-to-learn-python-multithreading-7535
 
 https://www.geeksforgeeks.org/python/multiprocessing-python-set-1/
 
+https://www.geeksforgeeks.org/python/multiprocessing-python-set-2/
+
 https://www.geeksforgeeks.org/python/synchronization-pooling-processes-python/
 
 https://www.geeksforgeeks.org/operating-systems/understanding-fork-and-spawn-in-python-multiprocessing/
