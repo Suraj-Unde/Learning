@@ -4,7 +4,7 @@
 
 ---
 
-# Slide 1 — Introduction
+# Introduction
 
 # What is vFunction?
 
@@ -24,7 +24,7 @@ It acts like:
 
 ---
 
-# Slide 2 — Why Companies Need vFunction
+# Why Companies Need vFunction
 
 # Real Enterprise Problem
 
@@ -67,7 +67,7 @@ vFunction helps organizations:
 
 ---
 
-# Slide 3 — Main Goal of vFunction
+# Main Goal of vFunction
 
 # Core Mission
 
@@ -83,7 +83,7 @@ vFunction helps organizations:
 
 ---
 
-# Slide 4 — High-Level Platform Flow
+# High-Level Platform Flow
 
 # End-to-End Workflow
 
@@ -107,7 +107,7 @@ Continuous Architectural Observability
 
 ---
 
-# Slide 5 — Core Components of vFunction
+# Core Components of vFunction
 
 # Major Components
 
@@ -123,7 +123,7 @@ Continuous Architectural Observability
 
 ---
 
-# Slide 6 — Static Code Analysis
+# Static Code Analysis
 
 # What is Static Code Analysis?
 
@@ -158,7 +158,7 @@ Static analysis does exactly this for software.
 
 ---
 
-# Slide 7 — How Static Analysis Works Internally
+# How Static Analysis Works Internally
 
 # Internal Working
 
@@ -205,7 +205,7 @@ It measures:
 
 ---
 
-# Slide 8 — What Problems Static Analysis Detects
+# What Problems Static Analysis Detects
 
 # Common Issues Found
 
@@ -220,7 +220,7 @@ It measures:
 
 ---
 
-# Slide 9 — Runtime Analysis
+# Runtime Analysis
 
 # What is Runtime Analysis?
 
@@ -255,7 +255,7 @@ You discover:
 
 ---
 
-# Slide 10 — Runtime Analysis Internals
+# Runtime Analysis Internals
 
 # What vFunction Captures
 
@@ -294,7 +294,7 @@ This becomes:
 
 ---
 
-# Slide 11 — Distributed Tracing
+# Distributed Tracing
 
 # What is Distributed Tracing?
 
@@ -338,7 +338,7 @@ Tracing helps identify:
 
 ---
 
-# Slide 12 — Distributed Trace Internals
+# Distributed Trace Internals
 
 # Trace Structure
 
@@ -377,7 +377,7 @@ Distributed tracing works similarly for requests.
 
 ---
 
-# Slide 13 — OpenTelemetry Integration
+# OpenTelemetry Integration
 
 # What is OpenTelemetry?
 
@@ -413,7 +413,7 @@ Benefits:
 
 ---
 
-# Slide 14 — OpenTelemetry Data Flow
+# OpenTelemetry Data Flow
 
 # Telemetry Flow
 
@@ -450,7 +450,7 @@ vFunction Analysis Engine
 
 ---
 
-# Slide 15 — AI-Assisted Dependency Mapping
+# AI-Assisted Dependency Mapping
 
 # What Makes vFunction Special?
 
@@ -491,7 +491,7 @@ vFunction understands business architecture.
 
 ---
 
-# Slide 16 — How AI Dependency Mapping Works
+# How AI Dependency Mapping Works
 
 # AI Analysis Inputs
 
@@ -522,7 +522,7 @@ AI infers:
 
 ---
 
-# Slide 17 — Domain-Driven Design (DDD) Connection
+# Domain-Driven Design (DDD) Connection
 
 # Bounded Context Identification
 
@@ -553,7 +553,7 @@ This helps create:
 
 ---
 
-# Slide 18 — Monolith to Microservices Transformation
+# Monolith to Microservices Transformation
 
 # The Main Modernization Goal
 
@@ -592,7 +592,7 @@ User Service
 
 ---
 
-# Slide 19 — Technical Debt Detection
+# Technical Debt Detection
 
 # What is Technical Debt?
 
@@ -623,7 +623,7 @@ Eventually renovation becomes mandatory.
 
 ---
 
-# Slide 20 — Technical Debt Analysis
+# Technical Debt Analysis
 
 # What vFunction Detects
 
@@ -638,7 +638,7 @@ Eventually renovation becomes mandatory.
 
 ---
 
-# Slide 21 — Architectural Observability
+# Architectural Observability
 
 # What is Architectural Observability?
 
@@ -665,7 +665,7 @@ vFunction monitors:
 
 ---
 
-# Slide 22 — Architecture Drift
+# Architecture Drift
 
 # What is Architecture Drift?
 
@@ -706,7 +706,7 @@ Now Order Service became overly dependent.
 
 ---
 
-# Slide 23 — Refactoring Recommendations
+# Refactoring Recommendations
 
 # Intelligent Recommendations
 
@@ -731,7 +731,7 @@ The platform generates:
 
 ---
 
-# Slide 24 — CI/CD & Developer Workflow Integration
+# CI/CD & Developer Workflow Integration
 
 # Integration Ecosystem
 
@@ -760,7 +760,7 @@ instead of:
 
 ---
 
-# Slide 25 — Cloud Migration Support
+# Cloud Migration Support
 
 # Cloud-Native Transformation
 
@@ -786,7 +786,7 @@ vFunction helps applications become:
 
 ---
 
-# Slide 26 — Enterprise Workflow Example
+# Enterprise Workflow Example
 
 # Banking System Example
 
@@ -854,7 +854,7 @@ Result:
 
 ---
 
-# Slide 27 — Why vFunction is Different
+# Why vFunction is Different
 
 # Traditional Monitoring Tools
 
@@ -882,7 +882,7 @@ Mostly focus on:
 
 ---
 
-# Slide 28 — Key Benefits
+# Key Benefits
 
 # Technical Benefits
 
@@ -906,7 +906,7 @@ Mostly focus on:
 
 ---
 
-# Slide 29 — Important Technologies Behind vFunction
+# Important Technologies Behind vFunction
 
 # Core Technical Concepts
 
@@ -923,7 +923,7 @@ Mostly focus on:
 
 ---
 
-# Slide 30 — Simplified Summary
+# Simplified Summary
 
 # Easy Explanation for Teams
 
@@ -933,7 +933,7 @@ You can explain vFunction like this:
 
 ---
 
-# Slide 31 — Final Real-World Analogy
+# Final Real-World Analogy
 
 # vFunction as Smart City Intelligence System
 
@@ -951,7 +951,7 @@ That is exactly what vFunction does for enterprise software systems.
 
 ---
 
-# Slide 32 — Suggested Team Discussion Topics
+# Suggested Team Discussion Topics
 
 # Discussion Questions
 
@@ -964,7 +964,7 @@ That is exactly what vFunction does for enterprise software systems.
 
 ---
 
-# Slide 33 — Closing Statement
+# Closing Statement
 
 # Final Takeaway
 
