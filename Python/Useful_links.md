@@ -41,3 +41,5 @@ https://www.datacamp.com/tutorial/test-driven-development-in-python
 https://dev.to/nziokidennis/getting-started-with-test-driven-development-tdd-1447
 
 https://medium.com/@ldeassis/test-driven-development-in-python-a-practical-guide-for-intermediate-developers-fed4a41bf04e
+
+https://realpython.com/pytest-python-testing/
